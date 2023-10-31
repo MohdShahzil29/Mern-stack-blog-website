@@ -1,27 +1,94 @@
-.navbar {
-  font-family: "Poppins", sans-serif;
-  font-size: 17px;
-  line-height: 26px;
-  text-transform: uppercase;
-  box-shadow: 0 8px 6px -6px gray;
-  --webkit-box-shadow: 0 8px 6px -6px gray;
-  border-bottom: solid gray !important;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.navCus {
+  background: rgba( 255, 255, 255, 0.25 );
+box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+backdrop-filter: blur( 4px );
+-webkit-backdrop-filter: blur( 4px );
+border-radius: 10px;
+border: 1px solid rgba( 255, 255, 255, 0.18 );
 }
 
-.nav-link {
-  font-weight: 300 !important;
-  text-decoration: none !important;
+.feature {
+  background: rgba( 50, 236, 230, 0.25 );
+box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+backdrop-filter: blur( 4px );
+-webkit-backdrop-filter: blur( 4px );
+border-radius: 10px;
+border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+.banner {
+  background: rgba( 247, 34, 255, 0.35 );
+box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+backdrop-filter: blur( 4px );
+-webkit-backdrop-filter: blur( 4px );
+border-radius: 10px;
+border: 1px solid rgba( 255, 255, 255, 0.18 );
 }
 
-.active {
-  border-bottom: 2px solid black;
+:root {
+  font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1;
+  font-weight: 500;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+
+  --black: #050a10;
+  --black2: #050a10;
+  --black3: #050a10;
+  --black-lighter: #050a10;
+  --black-light: #050a10;
+  --pink: #da2f68;
+  --orange: #f89e00;
+  --gradient: linear-gradient(98.37deg, #f89e00 0.99%, #da2f68 100%);
 }
 
-.navbar-brand {
-  font-weight: 700;
-  font-family: "roboto", sans-serif;
-  letter-spacing: 3px;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-.text-cus {
-  text-decoration: none !important;
+
+body {
+  background-color: var(--black);
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+.skeleton {
+  position: relative;
+  overflow: hidden;
+  background-color: #050a10;
+  &::after {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      transform: translateX(-100%);
+      background-image: linear-gradient(
+          90deg,
+          rgba(#050a10, 0) 0,
+          rgba(#050a10, 0.2) 20%,
+          rgba(#050a10, 0.5) 60%,
+          rgba(#050a10, 0)
+      );
+      animation: shimmer 2s infinite;
+      content: "";
+  }
+
+  @keyframes shimmer {
+      100% {
+          transform: translateX(100%);
+      }
+  }
 }
