@@ -4,6 +4,8 @@ const cors = require('cors')
 const morgan = require('morgan');
 const { connectDb } = require('./config/db');
 const userRoutes = require('./routes/userRoutes')
+const postRoutes = require('./routes/postRoutes')
+const categoryRoutes = require('./routes/categoryRoutes')
 
 // Dotenv config 
 dotenv.config();
@@ -22,6 +24,8 @@ app.use(morgan("dev"));
 // routes
 
 app.use('/api/v1/user', userRoutes)
+app.use('/api/v1/post', postRoutes)
+app.use('/api/v1/category', categoryRoutes)
 
 const PORT = process.env.PORT || 8000;
 
